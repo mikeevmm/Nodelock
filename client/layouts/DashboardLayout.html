@@ -1,0 +1,37 @@
+<template name="DashboardLayout">
+  <div class="dashboard">
+    {{#if Template.subscriptionsReady}}
+    <div class="main-content">
+      <div class="container">
+          <div class="hello-text card-panel z-depth-2">
+            <div class='center-align'>
+              <h1>Hello <span class="text-red">{{user}}</span>.</h1>
+            </div>
+            <div class="center-align">
+              <h3>It seems there are no <span class="text-green">active games.</span><br>Join or create one below.</h3>
+            </div>
+          </div>
+          <div class="row buttons">
+            <div class="col s6">
+              <div class="card-panel center-align waves-effect waves-light">
+              <a href="/create">
+                <p><span><i class="fa fa-plus-circle lg"></i></span>  Create</p>
+              </a>
+              </div>
+            </div>
+            <div class="col s6">
+              <div class="card-panel center-align waves-effect waves-light">
+              <a href="/join">
+                <p><span><i class="material-icons">group_add</i></span>  Join</p>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{else}}
+      {{> Loader}}
+    {{/if}}
+  </div>
+  {{> logout}}
+</template>

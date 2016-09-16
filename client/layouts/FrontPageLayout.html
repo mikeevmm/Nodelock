@@ -1,0 +1,23 @@
+<template name="FrontPageLayout">
+  <div class="front-page">
+    <div class="toggle-login-button">
+      <button class="btn waves-effect waves-light z-depth-1">
+        {{#if toggleLogin}}
+          Sign up
+        {{else}}
+          Login
+        {{/if}}
+      </button>
+    </div>
+
+    <div class="container valign-wrapper">
+      <div class="valign login-buttons-container card-panel z-depth-3">
+        {{#if toggleLogin}}
+          {{> AccountsLogin}}
+        {{else}}
+          {{> AccountsCreate}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</template>

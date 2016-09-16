@@ -1,0 +1,283 @@
+/* CSS declarations go here */
+
+//Colors
+white = rgb(230, 230, 230)
+real-white = #fff
+black = #141414
+ultra-black = #121212
+grey = #D8D8D8
+dark-grey = #262526
+light-grey = #EEE
+purp = #2f2b48
+dark-purp = #23232c
+red = #E54B4B
+teal = #82D8D8
+dark-teal = #66A6A6
+green = #CBE56C
+blue = rgb(36, 102, 157)
+bright-blue = #0082C8
+maroon = #6A2140
+light-red = #CA5765
+pink = #CF256D
+pink-palette = #ee204d
+orange = #E8846B
+
+poiret = 'Poiret One'
+pt = 'PT Sans'
+
+//Mixins
+background(url, size, position)
+  background-image url(url)
+  @media only screen and (max-width : 992px)
+    background-image url("lowq/"+url)
+  background-size size
+  background-position position
+
+//Styling
+*
+  padding 0
+  margin 0
+
+body
+  background-color ultra-black
+
+.text-blue
+  color blue
+.text-red
+  color red
+
+.poiret
+  font-family poiret, sans-serif
+
+//collapsible
+.collapsible
+  background-color real-white
+
+//404
+.notfound
+  height 100vh
+  padding 1vh 1vw
+  color white
+  background '404Image.png' cover center center
+
+//Sign out
+.logout-buttons-container
+  background-color transparent
+  border-radius 5px
+  position absolute
+  bottom 2vh
+  right 2vw
+  z-index 10
+  font-family poiret, 'sans-serif'
+  .btn
+    background-color black
+    color white
+
+//Go to dashboard button
+.goto-dashboard-btn
+  absolute top 1vh left 0.8vw
+  opacity 0.9
+
+//Front page
+.front-page
+  height 100vh
+  background 'nodelock-city.png' cover center bottom
+  .valign-wrapper
+    height 100%
+  .login-buttons-container
+    relative top 15%
+    background-color black
+    color white
+    text-align center
+    margin 0 auto
+    min-width 60%
+    border-radius 10px
+    .row
+      padding 3px 10px
+    .btn
+      color white
+      background-color dark-grey
+  .toggle-login-button
+    position absolute
+    left 1vw
+    top 1vh
+    .btn
+      background-color dark-grey
+      color white
+
+//Sidebar
+/*
+.button-collapse
+  height 100%
+.side-bar
+  display inline-block
+  p
+    color real-white
+  i
+    color real-white
+  ul
+    background-color black
+    padding-top 15vh
+    overflow hidden
+    li
+      width inherit
+      padding-top 5vh
+      padding-bottom 5vh
+      margin-top 1vh
+      margin-bottom 1vh
+      display inline-block
+      color white
+      background-color black
+      transition all .2s ease
+      a,a:visited
+        text-align center
+        color white
+        text-decoration none
+        font-family poiret, sans-serif
+        font-size 3em
+      &:hover
+        a,i,p
+          color red
+        background-color dark-grey
+        transform translate3d(10px, 0, 0)
+
+.next-to-sidebar
+  padding-left 300px
+*/
+
+@media only screen and (max-width : 992px)
+  .next-to-sidebar
+    padding-left 0
+
+//Dashboard
+.dashboard
+  background'nodelock-graffiti.png' cover center center
+  height 100vh
+  padding-top 10%
+  .main-content
+    .card-panel
+      opacity 0.95
+      border-radius 5px
+      background-color black
+      padding-bottom 15px
+      width 100%
+    text-align center
+    font-family poiret, sans-serif
+    color white
+    row
+      padding-bottom 20px
+    h1
+      font-size 13vmin
+    h3
+      font-size 5vmin
+      text-decoration underline
+    .buttons
+      font-size 8vmin
+      text-decoration none
+      transition all .2s ease
+      a,a:visited,a:hover
+        text-decoration none
+        color bright-blue
+    .material-icons
+      font-size 8vmin
+
+//Create game
+.create-game
+  padding-top 5vh
+  height 100vh
+  background 'nodelock-alley.png' cover right bottom
+  .collapsible li
+    .collapsible-header
+      font-family pt, sans-serif
+      font-weight bold
+    .collapsible-body
+      padding 10px
+      max-height 60vh
+      overflow auto
+      .participants-list
+        max-height 20vh
+        overflow auto
+  #map
+    @media only screen and (max-width : 992px)
+      max-height 30vh
+    height 40vh
+    min-height 180px
+    width inherit
+
+//Join game
+.join-game
+  padding-top 5vh
+  height 100vh
+  background 'nodelock-galery.png' cover center center
+  .invitation-list
+    font-family poiret, 'sans-serif'
+    padding 4vh 3vw
+    border-radius 10px;
+    background-color black
+    opacity 0.95
+    color white
+  .join
+    margin-left 3px
+    margin-right 3px
+
+//Game dashboard (if unready)
+.game-dashboard-unready
+  height 100vh
+  background 'nodelock-wait-image.png' cover center center
+  padding-top 10vh
+  .wait-message
+    border-radius 10px
+    background-color black
+    padding-bottom 15px
+    width 100%
+    color white
+    text-align center
+    font-family poiret, sans-serif
+
+//Game dashboard (in game)
+.game-dashboard
+  #map
+    width 100vw
+    height 100vh
+  .action-buttons
+    position fixed
+    bottom 2vh
+    left 2vw
+  .btn-floating
+    &.blue
+      background-color bright-blue
+  .info-button
+    position fixed
+    bottom 2vh
+    left 48vw
+  .active-perk
+    position fixed
+    top 2vh
+    right 2vw
+    i
+      color black
+  .cancel-game
+    position absolute
+    top 1vh
+    left 45vw
+    opacity 0.8
+    background-color black
+    color white
+
+//Game Dashboard (end game)
+.end-game-text
+  .red-text
+    color red
+  .blue-text
+    color blue
+  position absolute
+  width 80vw
+  left 10vw
+  top 15vh
+  opacity 0.9
+  border-radius 10px
+  background-color black
+  padding-bottom 15px
+  color white
+  text-align center
+  font-family poiret, sans-serif

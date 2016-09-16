@@ -1,0 +1,78 @@
+<template name="CreateGameLayout">
+  {{> logout}}
+  {{> gotoDashboardBtn}}
+  <div class="create-game">
+    <div class="container">
+      <ul class="collapsible" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header active">
+            <i class="material-icons flow-text">directions_run</i><p class="flow-text"> Participants</p>
+          </div>
+          <div class="collapsible-body">
+            <div class="container">
+              <div class="section">
+                <form id="add-player">
+                  <input placeholder="New player username" id="new-player-username" class="flow-text" type="text">
+                  <button class="btn waves-effect waves-light" type="submit">add</button>
+                </form>
+              </div>
+
+              <div class="participants-list">
+                <div class="divider"></div>
+                <div class="inline-block">
+                  <p>
+                    <span><i class="material-icons">directions_run</i></span>
+                    <span class="flow-text">{{user}}</span>
+                    <span class="right"><button class="btn waves-effect waves-light red disabled">Remove</button></span>
+                  </p>
+                </div>
+                {{#each username in players}}
+                  <div class="divider"></div>
+                  <div class="inline-block">
+                    <p>
+                      <span class="team-button"><i class="material-icons">directions_run</i></span>
+                      <span class="flow-text">  {{username}}</span>
+                      <span class="right"><button class="btn waves-effect waves-light red remove-player" remove="{{username}}">Remove</button></span>
+                    </p>
+                  </div>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header">
+            <i class="material-icons flow-text">place</i><p class="flow-text"> Map</p>
+          </div>
+          <div class="collapsible-body center-align">
+            <div class="section">
+              <div id="map"></div>
+            </div>
+            <button class="btn waves-effect waves-light green" id="add-node-btn">Add node here</button>
+            {{#unless geoFixed}}
+              <p>Looking for position..</p>
+              {{> Loader}}
+            {{/unless}}
+          </div>
+        </li>
+        <!--<li>
+          <div class="collapsible-header">
+            <i class="material-icons flow-text">view_headline</i><p class="flow-text"> Rules</p>
+          </div>
+          <div class="collapsible-body">
+            <div class="container">
+              <div class="section center-align">
+                <div class="section">
+                  <i class="material-icons medium">query_builder</i>
+                </div>
+                <div id="slider"></div>
+                <p class="flow-text center-align">{{gameTime}} minutes</p>
+              </div>
+            </div>
+          </div>
+        </li>-->
+      </ul>
+      <button id="create-game-btn" class="btn waves-effect waves-light center-align green">Create</button>
+    </div>
+  </div>
+</template>

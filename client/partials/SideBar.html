@@ -1,0 +1,8 @@
+<template name="SideBar">
+  <div class="side-bar">
+    <ul id="slide-out" class="side-nav fixed z-depth-3">
+      {{> Template.dynamic template=navlinks}}
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+  </div>
+</template>

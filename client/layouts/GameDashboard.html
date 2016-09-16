@@ -1,0 +1,65 @@
+<template name="GameDashboard">
+  {{> logout}}
+  {{#if gameReady}}
+    <div class="game-dashboard">
+
+        <div id="map"></div>
+
+        <div class="active-perk">
+          <div class="btn-floating btn-large white"><i class="material-icons">{{perkIcon}}</i></div>
+        </div>
+
+        {{#unless gameOver}}
+
+          <div class="info-button">
+            <div class="btn-floating btn-large waves-effect waves-light {{team}} get-base-info"><i class="fa fa-info"></i></div>
+          </div>
+
+          {{#if inNode}}
+          <div class="action-buttons">
+            <a class="btn-floating btn-large waves-effect waves-light {{team}} attack"><i class="material-icons">flash_on</i></a>
+            {{#if isMedic}}
+              <a class="btn-floating btn-large waves-effect waves-light {{team}} heal"><i class="fa fa-heartbeat"></i></a>
+            {{/if}}
+            <a class="btn-floating btn-large waves-effect waves-light {{team}} get-node-info"><i class="fa fa-question"></i></a>
+
+          </div>
+          {{/if}}
+
+          {{#if inBase}}
+          <div class="action-buttons">
+            <a class="btn-floating btn-large waves-effect waves-light {{team}} set-scout"><i class="material-icons flow-text">directions_run</i></a>
+            <a class="btn-floating btn-large waves-effect waves-light {{team}} set-medic"><i class="material-icons flow-text">favorite</i></a>
+            <a class="btn-floating btn-large waves-effect waves-light {{team}} set-tank"><i class="material-icons flow-text">fitness_center</i></a>
+          </div>
+          {{/if}}
+
+          {{#if inOpponentBase}}
+          <div class="action-buttons">
+            <a class="btn-floating btn-large waves-effect waves-light {{team}} attack-opponent"><i class="material-icons flow-text">flash_on</i></a>
+          </div>
+          {{/if}}
+
+        {{else}}
+
+          <div class="end-game-text card-panel z-depth-2">
+            <div class="btn-floating btn-large waves-effect waves-light {{team}} quit-game"><i class="fa fa-sign-out"></i></div>
+            <div class='center-align'>
+              <h1><span class="{{winner}}-text">{{winner}}</span> wins!</h1>
+            </div>
+          </div>
+
+        {{/unless}}
+    </div>
+  {{else}}
+    <div class="game-dashboard-unready">
+      <div class="container">
+        <div class="wait-message card-panel z-depth-2">
+          <div class='center-align'>
+            <h1>Waiting for players to join...</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+</template>

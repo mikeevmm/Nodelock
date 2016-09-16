@@ -1,0 +1,29 @@
+<template name="JoinGame">
+  {{> logout}}
+  {{> gotoDashboardBtn}}
+  <div class="join-game">
+    {{#if Template.subscriptionsReady}}
+      <div class="container">
+      <div class="card-panel z-depth-2 invitation-list">
+        {{#each invitations}}
+          <div class="section">
+            <span><i class="material-icons">directions_run</i></span>
+            <span class="flow-text">  {{inviting}}'s game</span>
+            <span class="right">
+              <button class="btn waves-effect waves-light blue join {{team}} {{blueFull}}" isDisabled="{{blueFull}}" inviting="{{inviting}}" gameid="{{gameid}}" team="blue">Join Blue</button>
+            </span>
+            <span class="right">
+              <button class="btn waves-effect waves-light red join {{team}} {{redFull}}" isDisabled="{{redFull}}" inviting="{{inviting}}" gameid="{{gameid}}" team="red">Join Red</button>
+            </span>
+          </div>
+          <div class="divider"></div>
+        {{else}}
+          <h3 class="center-align poiret">No invitations.</h3>
+        {{/each}}
+        </div>
+      </div>
+    {{else}}
+      {{> Loader}}
+    {{/if}}
+  </div>
+</template>

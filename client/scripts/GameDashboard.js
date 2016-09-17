@@ -326,7 +326,10 @@ var createMap = function(){
     return;
   try {
     map = L.map('map', {doubleClickZoom: false, touchZoom: true}).setView([0,0], MAP_ZOOM);
-    L.tileLayer('https://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {opacity: 0.5}).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    	maxZoom: 19,
+    	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
   } catch (e) {
     console.log(e);
   }

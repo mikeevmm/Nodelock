@@ -8,7 +8,7 @@ Creating a Game
 
 Nodelock is a game to be played with a group of people — so before you go on to create a new game, find at least another person to play with.
 
-Once you have, login at [<u>https://nodelock.herokuapp.com</u>] and tap Create.
+Once you have, login at [nodelock](https://nodelock.herokuapp.com) and tap Create.
 
 You will be asked for the usernames of the participants, under the participants tab, and for node positions, under the Map tab.
 

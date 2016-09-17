@@ -326,7 +326,7 @@ var createMap = function(){
     return;
   try {
     map = L.map('map', {doubleClickZoom: false, touchZoom: true}).setView([0,0], MAP_ZOOM);
-    L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {opacity: 0.5}).addTo(map);
+    L.tileLayer('https://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {opacity: 0.5}).addTo(map);
   } catch (e) {
     console.log(e);
   }

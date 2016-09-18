@@ -42,9 +42,25 @@ Perks are individual to players, and can be changed at the player’s base. Each
 
 The scout is a class that is most valuable at the beginning of a game. A scout has just enough damage points to capture a neutral node, but captured nodes have 35 base health points.
 
-### Tank![][4]
+### Tank![](https://i.imgur.com/xhy4UwP.png)
 
-The tank is, as the name implies, a perk mostly used to capture nodes belonging to the opposing team (30
+The tank is, as the name implies, a perk mostly used to capture nodes belonging to the opposing team (30 hit points). However, the health of a node captured by a tank is low, at 5 health points.
+
+### Medic![](https://i.imgur.com/qFAvXbp.png)
+
+Although the medic is handicapped in both attack (0 hit points) and capture (15 base health points), it is the only class that can heal nodes, adding 20 health points to a healed node (with a 10 second cooldown on the use of this ability). It is most effective when used in coordination with other perks.
+
+### Actions
+
+### Attack![](https://i.imgur.com/pHQLKVD.png)
+
+### Node info![](https://i.imgur.com/NjweqrL.png)
+
+### Heal (Medic perk only)![](https://i.imgur.com/8irTE7i.png)
+
+### Base info![](https://i.imgur.com/bM9JkdF.png)
+
+![](https://i.imgur.com/NmbScFQ.jpg)
 
   []: https://i.imgur.com/4JEG6vl.png
   [<u>nodelock.meteor.com</u>]: http://nodelock.meteor.com

@@ -18,7 +18,7 @@ Template.GameDashboard.helpers({
     return Session.get('gameReady');
   },
   'inNode':function(){
-    return !!Session.get('inNode');
+    return !!Session.get('inNode'); // Bang bang, you're a boolean now
   },
   'inBase':function(){
     return Session.get('inBase');
